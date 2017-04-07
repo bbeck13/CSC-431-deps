@@ -16,11 +16,13 @@ all : MiniCompiler.class
 
 MiniCompiler.class : antlr.generated ${FILES}
 	$(JAVAC) -cp ${CLASSPATH}:$(CLASSPATH_MOD) mini/*.java mini/ast/*.java
+	jar -cvfe ../miniparser.jar mini/*.java mini/*.class mini/ast/*.java mini/ast/*.class
 
 antlr.generated : Mini.g4
 	$(JAVA) -cp ${CLASSPATH}:$(CLASSPATH_MOD) org.antlr.v4.Tool -visitor Mini.g4
 	touch antlr.generated
 	mv *.java mini
+	find . -iname '*.java' -exec sed -i -e 's/public final/public/g' {} \;
 
 clean:
 	\rm -rf *generated* ${GENERATED} mini/*.class mini/ast/*.class

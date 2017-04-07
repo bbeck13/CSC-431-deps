@@ -130,7 +130,7 @@ public class MiniParser extends Parser {
 		}
 	}
 
-	public final ProgramContext program() throws RecognitionException {
+	public ProgramContext program() throws RecognitionException {
 		ProgramContext _localctx = new ProgramContext(_ctx, getState());
 		enterRule(_localctx, 0, RULE_program);
 		try {
@@ -183,7 +183,7 @@ public class MiniParser extends Parser {
 		}
 	}
 
-	public final TypesContext types() throws RecognitionException {
+	public TypesContext types() throws RecognitionException {
 		TypesContext _localctx = new TypesContext(_ctx, getState());
 		enterRule(_localctx, 2, RULE_types);
 		try {
@@ -254,7 +254,7 @@ public class MiniParser extends Parser {
 		}
 	}
 
-	public final TypeDeclarationContext typeDeclaration() throws RecognitionException {
+	public TypeDeclarationContext typeDeclaration() throws RecognitionException {
 		TypeDeclarationContext _localctx = new TypeDeclarationContext(_ctx, getState());
 		enterRule(_localctx, 4, RULE_typeDeclaration);
 		try {
@@ -311,7 +311,7 @@ public class MiniParser extends Parser {
 		}
 	}
 
-	public final NestedDeclContext nestedDecl() throws RecognitionException {
+	public NestedDeclContext nestedDecl() throws RecognitionException {
 		NestedDeclContext _localctx = new NestedDeclContext(_ctx, getState());
 		enterRule(_localctx, 6, RULE_nestedDecl);
 		int _la;
@@ -371,7 +371,7 @@ public class MiniParser extends Parser {
 		}
 	}
 
-	public final DeclContext decl() throws RecognitionException {
+	public DeclContext decl() throws RecognitionException {
 		DeclContext _localctx = new DeclContext(_ctx, getState());
 		enterRule(_localctx, 8, RULE_decl);
 		try {
@@ -455,7 +455,7 @@ public class MiniParser extends Parser {
 		}
 	}
 
-	public final TypeContext type() throws RecognitionException {
+	public TypeContext type() throws RecognitionException {
 		TypeContext _localctx = new TypeContext(_ctx, getState());
 		enterRule(_localctx, 10, RULE_type);
 		try {
@@ -529,7 +529,7 @@ public class MiniParser extends Parser {
 		}
 	}
 
-	public final DeclarationsContext declarations() throws RecognitionException {
+	public DeclarationsContext declarations() throws RecognitionException {
 		DeclarationsContext _localctx = new DeclarationsContext(_ctx, getState());
 		enterRule(_localctx, 12, RULE_declarations);
 		int _la;
@@ -590,7 +590,7 @@ public class MiniParser extends Parser {
 		}
 	}
 
-	public final DeclarationContext declaration() throws RecognitionException {
+	public DeclarationContext declaration() throws RecognitionException {
 		DeclarationContext _localctx = new DeclarationContext(_ctx, getState());
 		enterRule(_localctx, 14, RULE_declaration);
 		int _la;
@@ -658,7 +658,7 @@ public class MiniParser extends Parser {
 		}
 	}
 
-	public final FunctionsContext functions() throws RecognitionException {
+	public FunctionsContext functions() throws RecognitionException {
 		FunctionsContext _localctx = new FunctionsContext(_ctx, getState());
 		enterRule(_localctx, 16, RULE_functions);
 		int _la;
@@ -725,7 +725,7 @@ public class MiniParser extends Parser {
 		}
 	}
 
-	public final FunctionContext function() throws RecognitionException {
+	public FunctionContext function() throws RecognitionException {
 		FunctionContext _localctx = new FunctionContext(_ctx, getState());
 		enterRule(_localctx, 18, RULE_function);
 		try {
@@ -786,7 +786,7 @@ public class MiniParser extends Parser {
 		}
 	}
 
-	public final ParametersContext parameters() throws RecognitionException {
+	public ParametersContext parameters() throws RecognitionException {
 		ParametersContext _localctx = new ParametersContext(_ctx, getState());
 		enterRule(_localctx, 20, RULE_parameters);
 		int _la;
@@ -883,7 +883,7 @@ public class MiniParser extends Parser {
 		}
 	}
 
-	public final ReturnTypeContext returnType() throws RecognitionException {
+	public ReturnTypeContext returnType() throws RecognitionException {
 		ReturnTypeContext _localctx = new ReturnTypeContext(_ctx, getState());
 		enterRule(_localctx, 22, RULE_returnType);
 		try {
@@ -1121,7 +1121,7 @@ public class MiniParser extends Parser {
 		}
 	}
 
-	public final StatementContext statement() throws RecognitionException {
+	public StatementContext statement() throws RecognitionException {
 		StatementContext _localctx = new StatementContext(_ctx, getState());
 		enterRule(_localctx, 24, RULE_statement);
 		int _la;
@@ -1329,7 +1329,7 @@ public class MiniParser extends Parser {
 		}
 	}
 
-	public final BlockContext block() throws RecognitionException {
+	public BlockContext block() throws RecognitionException {
 		BlockContext _localctx = new BlockContext(_ctx, getState());
 		enterRule(_localctx, 26, RULE_block);
 		try {
@@ -1380,7 +1380,7 @@ public class MiniParser extends Parser {
 		}
 	}
 
-	public final StatementListContext statementList() throws RecognitionException {
+	public StatementListContext statementList() throws RecognitionException {
 		StatementListContext _localctx = new StatementListContext(_ctx, getState());
 		enterRule(_localctx, 28, RULE_statementList);
 		int _la;
@@ -1463,7 +1463,7 @@ public class MiniParser extends Parser {
 		}
 	}
 
-	public final LvalueContext lvalue() throws RecognitionException {
+	public LvalueContext lvalue() throws RecognitionException {
 		return lvalue(0);
 	}
 
@@ -1739,7 +1739,7 @@ public class MiniParser extends Parser {
 		}
 	}
 
-	public final ExpressionContext expression() throws RecognitionException {
+	public ExpressionContext expression() throws RecognitionException {
 		return expression(0);
 	}
 
@@ -2050,7 +2050,7 @@ public class MiniParser extends Parser {
 		}
 	}
 
-	public final ArgumentsContext arguments() throws RecognitionException {
+	public ArgumentsContext arguments() throws RecognitionException {
 		ArgumentsContext _localctx = new ArgumentsContext(_ctx, getState());
 		enterRule(_localctx, 34, RULE_arguments);
 		int _la;
