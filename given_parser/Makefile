@@ -3,7 +3,7 @@
 # Provided code assumes Java 8
 JAVAC=javac
 JAVA=java
-ANTLRJAR=../antlr-4.6-complete.jar
+ANTLRJAR=../antlr-4.7-complete.jar
 JSONJAR=../javax.json-1.0.4.jar
 LOMBOKJAR=../lombok.jar
 
