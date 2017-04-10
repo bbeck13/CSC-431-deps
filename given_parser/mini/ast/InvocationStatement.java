@@ -1,14 +1,16 @@
 package mini.ast;
 
-import java.util.List;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Value;
 
-public class InvocationStatement
-   extends AbstractStatement
-{
+@EqualsAndHashCode(callSuper=false)
+@Value
+public class InvocationStatement extends AbstractStatement {
    private final Expression expression;
 
-   public InvocationStatement(int lineNum, Expression expression)
-   {
+   @Builder
+   public InvocationStatement(int lineNum, Expression expression) {
       super(lineNum);
       this.expression = expression;
    }

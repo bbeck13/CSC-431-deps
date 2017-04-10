@@ -1,10 +1,14 @@
 package mini.ast;
 
-public class ReturnEmptyStatement
-   extends AbstractStatement
-{
-   public ReturnEmptyStatement(int lineNum)
-   {
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Value;
+
+@EqualsAndHashCode(callSuper=false)
+@Value
+public class ReturnEmptyStatement extends AbstractStatement {
+   @Builder
+   public ReturnEmptyStatement(int lineNum) {
       super(lineNum);
    }
 }

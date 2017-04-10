@@ -5,10 +5,11 @@ JAVAC=javac
 JAVA=java
 ANTLRJAR=../antlr-4.6-complete.jar
 JSONJAR=../javax.json-1.0.4.jar
+LOMBOKJAR=../lombok.jar
 
-CLASSPATH_MOD=$(ANTLRJAR):$(JSONJAR)
+CLASSPATH_MOD=$(ANTLRJAR):$(JSONJAR):$(LOMBOKJAR)
 
-FILES=mini/MiniCompiler.java mini/MiniToJsonVisitor.java mini/MiniToAstDeclarationsVisitor.java mini/MiniToAstExpressionVisitor.java mini/MiniToAstFunctionVisitor.java mini/MiniToAstProgramVisitor.java mini/MiniToAstStatementVisitor.java mini/MiniToAstTypeDeclarationVisitor.java mini/MiniToAstTypeVisitor.java
+FILES=mini/MiniToJsonVisitor.java mini/MiniToAstDeclarationsVisitor.java mini/MiniToAstExpressionVisitor.java mini/MiniToAstFunctionVisitor.java mini/MiniToAstProgramVisitor.java mini/MiniToAstStatementVisitor.java mini/MiniToAstTypeDeclarationVisitor.java mini/MiniToAstTypeVisitor.java
 
 GENERATED=mini/MiniBaseVisitor.java mini/MiniLexer.java MiniLexer.tokens Mini.tokens mini/MiniVisitor.java mini/MiniParser.java mini/MiniBaseListener.java mini/MiniListener.java
 

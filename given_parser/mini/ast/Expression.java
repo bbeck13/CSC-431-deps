@@ -1,5 +1,4 @@
 package mini.ast;
 
-public interface Expression
-{
+public interface Expression {
 }

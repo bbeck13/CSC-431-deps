@@ -1,31 +1,28 @@
 package mini.ast;
 
-public class UnaryExpression
-   extends AbstractExpression
-{
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Value;
+
+@EqualsAndHashCode(callSuper = false)
+@Value
+public class UnaryExpression extends AbstractExpression {
    private final Operator operator;
    private final Expression operand;
 
-   private UnaryExpression(int lineNum, Operator operator, Expression operand)
-   {
+   @Builder
+   private UnaryExpression(int lineNum, Operator operator, Expression operand) {
       super(lineNum);
       this.operator = operator;
       this.operand = operand;
    }
 
-   public static UnaryExpression create(int lineNum, String opStr,
-      Expression operand)
-   {
-      if (opStr.equals(NOT_OPERATOR))
-      {
+   public static UnaryExpression create(int lineNum, String opStr, Expression operand) {
+      if (opStr.equals(NOT_OPERATOR)) {
          return new UnaryExpression(lineNum, Operator.NOT, operand);
-      }
-      else if (opStr.equals(MINUS_OPERATOR))
-      {
+      } else if (opStr.equals(MINUS_OPERATOR)) {
          return new UnaryExpression(lineNum, Operator.MINUS, operand);
-      }
-      else
-      {
+      } else {
          throw new IllegalArgumentException();
       }
    }
@@ -33,8 +30,7 @@ public class UnaryExpression
    private static final String NOT_OPERATOR = "!";
    private static final String MINUS_OPERATOR = "-";
 
-   public static enum Operator
-   {
+   public static enum Operator {
       NOT, MINUS
    }
 }

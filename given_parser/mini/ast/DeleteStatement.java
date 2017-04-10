@@ -1,12 +1,16 @@
 package mini.ast;
 
-public class DeleteStatement
-   extends AbstractStatement
-{
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Value;
+
+@EqualsAndHashCode(callSuper=false)
+@Value
+public class DeleteStatement extends AbstractStatement {
    private final Expression expression;
 
-   public DeleteStatement(int lineNum, Expression expression)
-   {
+   @Builder
+   public DeleteStatement(int lineNum, Expression expression) {
       super(lineNum);
       this.expression = expression;
    }

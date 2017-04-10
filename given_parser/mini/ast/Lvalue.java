@@ -1,5 +1,4 @@
 package mini.ast;
 
-public interface Lvalue
-{
+public interface Lvalue {
 }

@@ -1,10 +1,15 @@
 package mini.ast;
 
-public class NullExpression
-   extends AbstractExpression
-{
-   public NullExpression(int lineNum)
-   {
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Value;
+
+@EqualsAndHashCode(callSuper=false)
+@Value
+public class NullExpression extends AbstractExpression {
+
+   @Builder
+   public NullExpression(int lineNum) {
       super(lineNum);
    }
 }

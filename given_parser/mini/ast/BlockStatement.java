@@ -1,21 +1,24 @@
 package mini.ast;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
-public class BlockStatement
-   extends AbstractStatement
-{
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Value;
+
+@EqualsAndHashCode(callSuper=false)
+@Value
+public class BlockStatement extends AbstractStatement {
    private final List<Statement> statements;
 
-   public BlockStatement(int lineNum, List<Statement> statements)
-   {
+   @Builder
+   public BlockStatement(int lineNum, List<Statement> statements) {
       super(lineNum);
       this.statements = statements;
    }
 
-   public static BlockStatement emptyBlock()
-   {
+   public static BlockStatement emptyBlock() {
       return new BlockStatement(-1, new ArrayList<>());
    }
 }

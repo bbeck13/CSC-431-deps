@@ -2,8 +2,11 @@ package mini.ast;
 
 import java.util.List;
 
-public class Function
-{
+import lombok.Builder;
+import lombok.Value;
+
+@Value
+public class Function {
    private final int lineNum;
    private final String name;
    private final Type retType;
@@ -11,9 +14,9 @@ public class Function
    private final List<Declaration> locals;
    private final Statement body;
 
-   public Function(int lineNum, String name, List<Declaration> params,
-      Type retType, List<Declaration> locals, Statement body)
-   {
+   @Builder
+   public Function(int lineNum, String name, List<Declaration> params, Type retType,
+         List<Declaration> locals, Statement body) {
       this.lineNum = lineNum;
       this.name = name;
       this.params = params;

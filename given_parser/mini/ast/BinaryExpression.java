@@ -1,26 +1,28 @@
 package mini.ast;
 
-public class BinaryExpression
-   extends AbstractExpression
-{
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Value;
+
+@EqualsAndHashCode(callSuper=false)
+@Value
+public class BinaryExpression extends AbstractExpression {
    private final Operator operator;
    private final Expression left;
    private final Expression right;
 
-   private BinaryExpression(int lineNum, Operator operator,
-      Expression left, Expression right)
-   {
+   @Builder
+   private BinaryExpression(int lineNum, Operator operator, Expression left,
+         Expression right) {
       super(lineNum);
       this.operator = operator;
       this.left = left;
       this.right = right;
    }
 
-   public static BinaryExpression create(int lineNum, String opStr,
-      Expression left, Expression right)
-   {
-      switch (opStr)
-      {
+   public static BinaryExpression create(int lineNum, String opStr, Expression left,
+         Expression right) {
+      switch (opStr) {
          case TIMES_OPERATOR:
             return new BinaryExpression(lineNum, Operator.TIMES, left, right);
          case DIVIDE_OPERATOR:
@@ -63,8 +65,7 @@ public class BinaryExpression
    private static final String AND_OPERATOR = "&&";
    private static final String OR_OPERATOR = "||";
 
-   public static enum Operator
-   {
+   public static enum Operator {
       TIMES, DIVIDE, PLUS, MINUS, LT, GT, LE, GE, EQ, NE, AND, OR
    }
 }

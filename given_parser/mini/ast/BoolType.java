@@ -1,6 +1,9 @@
 package mini.ast;
 
-public class BoolType
-   implements Type
-{
+import lombok.Builder;
+import lombok.Value;
+
+@Builder
+@Value
+public class BoolType implements Type {
 }

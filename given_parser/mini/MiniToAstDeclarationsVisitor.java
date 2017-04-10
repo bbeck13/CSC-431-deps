@@ -1,24 +1,21 @@
 package mini;
 
-import org.antlr.v4.runtime.tree.TerminalNode;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
-import mini.ast.*;
+import org.antlr.v4.runtime.tree.TerminalNode;
 
-public class MiniToAstDeclarationsVisitor
-   extends MiniBaseVisitor<List<Declaration>>
-{
+import mini.ast.Declaration;
+import mini.ast.Type;
+
+public class MiniToAstDeclarationsVisitor extends MiniBaseVisitor<List<Declaration>> {
    private final MiniToAstTypeVisitor typeVisitor = new MiniToAstTypeVisitor();
 
    @Override
-   public List<Declaration> visitDeclarations(
-      MiniParser.DeclarationsContext ctx)
-   {
+   public List<Declaration> visitDeclarations(MiniParser.DeclarationsContext ctx) {
       List<Declaration> decls = new ArrayList<>();
 
-      for (MiniParser.DeclarationContext dctx : ctx.declaration())
-      {
+      for (MiniParser.DeclarationContext dctx : ctx.declaration()) {
          addDeclarationsTo(dctx, decls);
       }
 
@@ -26,20 +23,16 @@ public class MiniToAstDeclarationsVisitor
    }
 
    private void addDeclarationsTo(MiniParser.DeclarationContext ctx,
-      List<Declaration> decls)
-   {
+         List<Declaration> decls) {
       Type type = typeVisitor.visit(ctx.type());
 
-      for (TerminalNode node : ctx.ID())
-      {
-         decls.add(new Declaration(node.getSymbol().getLine(), type,
-            node.getText()));
+      for (TerminalNode node : ctx.ID()) {
+         decls.add(new Declaration(node.getSymbol().getLine(), type, node.getText()));
       }
    }
 
    @Override
-   protected List<Declaration> defaultResult()
-   {
+   protected List<Declaration> defaultResult() {
       return new ArrayList<>();
    }
 }

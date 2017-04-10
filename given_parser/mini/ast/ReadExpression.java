@@ -1,10 +1,15 @@
 package mini.ast;
 
-public class ReadExpression
-   extends AbstractExpression
-{
-   public ReadExpression(int lineNum)
-   {
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Value;
+
+@EqualsAndHashCode(callSuper=false)
+@Value
+public class ReadExpression extends AbstractExpression {
+
+   @Builder
+   public ReadExpression(int lineNum) {
       super(lineNum);
    }
 }

@@ -1,5 +1,4 @@
 package mini.ast;
 
-public interface Type
-{
+public interface Type {
 }

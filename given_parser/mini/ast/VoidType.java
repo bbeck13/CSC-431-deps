@@ -1,6 +1,9 @@
 package mini.ast;
 
-public class VoidType
-   implements Type
-{
+import lombok.EqualsAndHashCode;
+import lombok.Value;
+
+@EqualsAndHashCode(callSuper = false)
+@Value
+public class VoidType implements Type {
 }
